@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<routes>
+  <flow id="motorcycle_edge_N_SC2" type="motorcycle" from="edge_N" to="edge_S" begin="0" end="3600" vehsPerHour="660" departLane="random"/>
+  <flow id="car_edge_N_SC2" type="car" from="edge_N" to="edge_S" begin="0" end="3600" vehsPerHour="220" departLane="random"/>
+  <flow id="tuktuk_edge_N_SC2" type="tuktuk" from="edge_N" to="edge_S" begin="0" end="3600" vehsPerHour="88" departLane="random"/>
+  <flow id="motorcycle_edge_S_SC2" type="motorcycle" from="edge_S" to="edge_N" begin="0" end="3600" vehsPerHour="600" departLane="random"/>
+  <flow id="car_edge_S_SC2" type="car" from="edge_S" to="edge_N" begin="0" end="3600" vehsPerHour="200" departLane="random"/>
+  <flow id="tuktuk_edge_S_SC2" type="tuktuk" from="edge_S" to="edge_N" begin="0" end="3600" vehsPerHour="80" departLane="random"/>
+  <flow id="motorcycle_edge_E_SC2" type="motorcycle" from="edge_E" to="edge_W" begin="0" end="3600" vehsPerHour="600" departLane="random"/>
+  <flow id="car_edge_E_SC2" type="car" from="edge_E" to="edge_W" begin="0" end="3600" vehsPerHour="200" departLane="random"/>
+  <flow id="tuktuk_edge_E_SC2" type="tuktuk" from="edge_E" to="edge_W" begin="0" end="3600" vehsPerHour="80" departLane="random"/>
+  <flow id="motorcycle_edge_W_SC2" type="motorcycle" from="edge_W" to="edge_E" begin="0" end="3600" vehsPerHour="480" departLane="random"/>
+  <flow id="car_edge_W_SC2" type="car" from="edge_W" to="edge_E" begin="0" end="3600" vehsPerHour="160" departLane="random"/>
+  <flow id="tuktuk_edge_W_SC2" type="tuktuk" from="edge_W" to="edge_E" begin="0" end="3600" vehsPerHour="64" departLane="random"/>
+</routes>
