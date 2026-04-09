@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+  <!-- Motorcycle: length 2.0m, width 0.8m, laneChangeModel SL2015 enables sublane weaving -->
+  <vType id="motorcycle" vClass="motorcycle" length="2.0" width="0.8" height="1.2" maxSpeed="13.9" accel="2.5" decel="4.5" sigma="0.5" tau="1.0" laneChangeModel="SL2015" lcSublane="1.0" latAlignment="arbitrary" color="255,140,0"/>
+
+  <!-- Car: length 4.5m, width 1.8m -->
+  <vType id="car" vClass="passenger" length="4.5" width="1.8" height="1.5" maxSpeed="16.7" accel="1.8" decel="4.0" sigma="0.5" tau="1.2" color="70,130,180"/>
+
+  <!-- Tuk-tuk: length 3.8m, width 1.6m (approximated as taxi) -->
+  <vType id="tuktuk" vClass="taxi" length="3.8" width="1.6" height="1.8" maxSpeed="11.1" accel="1.2" decel="3.5" sigma="0.6" tau="1.5" color="34,139,34"/>
+</routes>

@@ -1,0 +1,450 @@
+================================================================================
+  🎓 ការយល់ដឹងពីគម្រោង — សម្រាប់ Beginner ពេញ
+  "Quantum-Enhanced Traffic Signal Optimization"
+  ────────────────────────────────────────────────
+  អានតាមលំដាប់ — ផ្អែកដោយគ្មាន technical knowledge
+================================================================================
+
+
+════════════════════════════════════════════════════════════
+  ជំហាន ១: ស្វែងយល់ PROBLEM (បញ្ហា)
+  [ចាប់ពីត្រង់នេះ — មានតែភ្នំពេញ + ម៉ូតូ]
+════════════════════════════════════════════════════════════
+
+  🏍️ ស្ថានការណ៍ពិតនៅភ្នំពេញ:
+  ──────────────────────────
+
+  ស្រមៃថា អ្នកឈរ crossroad នៅ Monivong × Sihanouk
+  វេលា 7 ព្រឹក (rush hour):
+
+    ទិស North-South (↕):  ម៉ូតូ 10 គ្រឿង កំពុងរង់ចាំ
+    ទិស East-West  (↔):  ម៉ូតូ 200 គ្រឿង ស្ទះ!
+
+  Traffic Light ធ្វើអ្វី?
+
+    🟢 Green North-South → 60 seconds  (ទំនេរ!)
+    🔴 Red East-West     → 60 seconds  (ស្ទះ 200 គ្រឿង!)
+
+  ➡️  Traffic light មិនដឹងអ្វីទាំងអស់!
+      វា run timer ដដែលៗ ជារៀងរហូត!
+      → នេះ ហៅថា "Fixed Cycle" Method
+      → នេះ ជា METHOD ចាស់ ពី ១៩៥០s!
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🤔 PROBLEM ច្បាស់ = Traffic Light gu stupid!
+     វាមិនដឹង queue ម៉ូតូ ច្រើននៅ direction ណា
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+════════════════════════════════════════════════════════════
+  ជំហាន ២: SOLUTION ដែលយើងចង់ធ្វើ
+════════════════════════════════════════════════════════════
+
+  🎯 គំនិតសាមញ្ញ — Traffic Light ដែល SMART:
+
+    ជំនួស Fixed Timer →
+    ប្រើ Computer ឲ្យ "THINK" ថា direction ណាគួតដ្ដ ‌ Green!
+
+  Logic ច្បាស់ (Simple):
+
+    ❓ Question:   "ម៉ូតូ 200 ស្ទះ East-West VS 10 North-South"
+    🧠 Computer:   "200 > 10 → East-West GREEN !"
+    💡 Action:     Green East-West = 60 seconds (clear queue!)
+    ✅ Result:     200 ម៉ូតូ ឆ្លង, ស្ទះ down!
+
+  ➡️  នេះ ហៅថា "Adaptive Signal Control"
+      = Traffic light adapt ទៅ traffic ពិត
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ OUR SOLUTION: ប្រើ Math + Computer
+     ដើម្បី decide ថា direction ណា Green
+     based on ACTUAL traffic queue!
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+════════════════════════════════════════════════════════════
+  ជំហាន ៣: ហេតុអ្វីជ្រើស QUANTUM COMPUTING?
+  [Explain ពី Zero]
+════════════════════════════════════════════════════════════
+
+  🔵 Quantum Computing = អ្វី?
+  ─────────────────────────────
+
+  Computer ធម្មតា (Classical):
+    → ប្រើ bits: 0 ឬ 1
+    → Try answers ONE by ONE
+    → e.g., Try x=0 → ខុស, Try x=1 → ត្រូវ!
+    → SLOW ប្រសិនបើ possibilities ច្រើន
+
+  Quantum Computer:
+    → ប្រើ qubits: 0 AND 1 ក្នុងពេលដំណាលគ្នា!
+    → Try ALL answers ក្នុងពេលតែ ONE!
+    → FAST ណាស់ ជាពិសេស optimization problems
+
+  ───────────────────────────────────────────────
+  譬喻 ល្អ (Analogy):
+  ───────────────────────────────────────────────
+
+  ស្រមៃ Maze (ផ្លូវវង្វេង):
+
+    Classical Computer:
+      → Try Route A → Dead end!
+      → Try Route B → Dead end!
+      → Try Route C → Found exit! ✅
+      (ទៅ one by one)
+
+    Quantum Computer:
+      → Try ALL routes ក្នុងពេលតែ ONCE!
+      → Found exit immediately! ✅
+      (fast ជាង!)
+
+  ───────────────────────────────────────────────
+  🎯 ហេតុអ្វី Traffic Signal = Good for Quantum?
+  ───────────────────────────────────────────────
+
+  Traffic problem = "ជ្រើស optimal signal plan"
+  = Optimization Problem (ស្វែងរក answer ល្អបំផុត)
+  = Exactly ប្រភេទ problem ដែល Quantum ជំនាញ!
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  HONEST ⚠️: Quantum Computing ថ្មី ណាស់!
+  Hardware still limited.
+  ─────────────────────────────────────────────
+  ដូច្នេះ យើង compare Quantum vs Classical:
+    → Quantum Annealing (D-Wave)     = modern method
+    → Simulated Annealing (Software) = classical copy
+    → Fixed Cycle                    = old traditional
+    → Webster Formula                = classical formula
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+════════════════════════════════════════════════════════════
+  ជំហាន ៤: QUBO = អ្វី? [Simple Explanation]
+════════════════════════════════════════════════════════════
+
+  QUBO = Quadratic Unconstrained Binary Optimization
+       = ការបំលែង "Traffic Problem" → "Math Problem"
+
+  ─────────────────────────────────────────────────
+  ហេតុអ្វីត្រូវវ បំលែង?
+  ─────────────────────────────────────────────────
+
+  Quantum Computer / SA solver
+  → ពុំ "ដឹង" traffic problem directly
+  → វា ONLY solve math problems (numbers + variables)
+
+  ដូច្នេះ:
+  Traffic Problem → [translate] → QUBO Math → [solve] → Answer!
+
+  ─────────────────────────────────────────────────
+  QUBO ធ្វើប្រៀបធៀប "Scoring System":
+  ─────────────────────────────────────────────────
+
+  x = 1 (North-South Green):
+    Score = -(moto_NS×0.6 + car_NS×0.3 + tuk_NS×0.1)
+
+  x = 0 (East-West Green):
+    Score = -(moto_EW×0.6 + car_EW×0.3 + tuk_EW×0.1)
+
+  Computer ជ្រើស x ដែល Score ទាបបំផុត
+  (ដំណាលតែ lowest score = serve queue ច្រើន!)
+
+  ─────────────────────────────────────────────────
+  ឧទាហរណ៍ (Example):
+  ─────────────────────────────────────────────────
+
+  Queue ស្ថានការណ៍:
+    North-South: 10 moto, 2 car
+    East-West:   200 moto, 20 car
+
+  Calculate Score x=1 (NS green):
+    = -(10×0.6 + 2×0.3) = -(6 + 0.6) = -6.6
+
+  Calculate Score x=0 (EW green):
+    = -(200×0.6 + 20×0.3) = -(120 + 6) = -126
+
+  Computer ជ្រើស x=0 (EW green) ព្រោះ -126 < -6.6! ✅
+
+  ➡️  East-West GREEN → 200 ម៉ូតូ ឆ្លង! ✅ CORRECT!
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🎉 QUBO = ធ្វើ Traffic light ឲ្យ smart
+     ដោយ score each choice → pick best score!
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+════════════════════════════════════════════════════════════
+  ជំហាន ៥: ហេតុអ្វី Motorcycle Weight = 0.60?
+  [ហេតុអ្វី ម៉ូតូ important ជាង ឡាន?]
+════════════════════════════════════════════════════════════
+
+  ● ភ្នំពេញ Traffic Modal Share (JASIC 2023):
+
+    🏍️ Motorcycle:  58–70% of all vehicles
+    🚗 Car:          14–20%
+    🛺 Tuk-tuk:      10–15%
+
+  ● ដូច្នេះ Weight reflect reality:
+
+    w_motorcycle = 0.60  ← dominant (majority!)
+    w_car        = 0.30  ← secondary
+    w_tuk        = 0.10  ← minority
+
+  ● ប្រៀបធៀប Paper ចាស់ (Singh 2022):
+    Singh treat car + scooter equally → weight = 0.5 / 0.5
+    ប៉ុន្ដែ Taiwan scooter = 20% only!
+
+  ● Our paper: motorcycle = 60-70%!
+    → weight MUST be different!
+    → This is OUR NEW CONTRIBUTION! 🌟
+
+
+════════════════════════════════════════════════════════════
+  ជំហាន ៦: SUMO = អ្វី? [Simple]
+════════════════════════════════════════════════════════════
+
+  SUMO = Simulation of Urban MObility
+       = Software ដើម្បី "simulate" ចរាចរណ៍ virtual!
+
+  ───────────────────────────────────────────
+  ស្រមៃ: Video game ចរាចរណ៍!
+  ───────────────────────────────────────────
+
+  SUMO = GTA ប៉ុន្ដែ realistic + scientific!
+
+  SUMO ចូលបាន:
+  ✅ Draw roads + intersections
+  ✅ Add ម៉ូតូ / ឡាន / tuk-tuk
+  ✅ Set traffic volume (how many/hour)
+  ✅ Run simulation → watch vehicles move!
+  ✅ Python control: start/stop/read data
+
+  ───────────────────────────────────────────
+  ហេតុអ្វីប្រើ SUMO (not real road)?
+  ───────────────────────────────────────────
+
+  Real road experiment:
+    ❌ Need to install real sensor at intersection
+    ❌ Cost = $$$$$
+    ❌ Need government permission
+    ❌ Dangerous to experiment on real traffic!
+
+  SUMO simulation:
+    ✅ FREE (open source)
+    ✅ Safe (virtual traffic)
+    ✅ Control everything (adjust variables)
+    ✅ Academically accepted (5 papers use SUMO!)
+    ✅ Run 1 hour traffic in 2 minutes!
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🎮 SUMO = Virtual Phnom Penh intersection
+     ដែល យើង test algorithm without real road!
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+════════════════════════════════════════════════════════════
+  ជំហាន ៧: PROJECT ធ្វើជាជំហានៗ (ពី Beginner View)
+════════════════════════════════════════════════════════════
+
+  ──────────────────────────────────────────────
+  Week 1: Setup Computer
+  ──────────────────────────────────────────────
+  អ្វីដែលត្រូវវធ្វើ:
+  → Install Python (programming language)
+  → Install SUMO (traffic simulator)
+  → Install some Python libraries (packages)
+
+  Python command ដំបូង (copy-paste):
+    pip install dwave-ocean-sdk dimod neal pandas matplotlib
+
+  Test ថាដំណើរការ:
+    python -c "import dimod; print('OK!')"
+    → ប្រសិនបើ print "OK!" → ✅ ready!
+
+  ──────────────────────────────────────────────
+  Week 2: Build Virtual Intersection in SUMO
+  ──────────────────────────────────────────────
+
+  SUMO មាន GUI (graphical editor) ហៅ netedit:
+  → Open netedit
+  → Click: "draw road" → draw 4-way cross shape
+  → Click: "add traffic light"
+  → Save file → done!
+
+  (ខ្ញុំ guide អ្នក step by step ពេល reach week នេះ)
+
+  ──────────────────────────────────────────────
+  Week 3-4: Write Python Code (ខ្ញុំ help!)
+  ──────────────────────────────────────────────
+
+  Main Logic (simple version):
+
+  ┌─────────────────────────────────────────┐
+  │  repeat every 30 seconds:               │
+  │    1. Read queue from SUMO              │
+  │       (how many moto waiting NS vs EW?) │
+  │    2. Calculate QUBO score              │
+  │       (NS score vs EW score)            │
+  │    3. Choose direction with better score│
+  │    4. Set traffic light GREEN           │
+  └─────────────────────────────────────────┘
+
+  Python code (beginner version — easy to read):
+
+  ════════════════════════════════════════════
+  import dimod, neal, traci
+
+  # Step 1: Read queue (how many waiting)
+  moto_NS = 10    # 10 motorcycle North-South
+  moto_EW = 200   # 200 motorcycle East-West
+
+  # Step 2: Calculate scores
+  score_NS = moto_NS * 0.6   # = 6.0
+  score_EW = moto_EW * 0.6   # = 120.0
+
+  # Step 3: Choose better direction
+  if score_EW > score_NS:
+      print("Set GREEN: East-West!")
+  else:
+      print("Set GREEN: North-South!")
+
+  # Output: "Set GREEN: East-West!"  ✅
+  ════════════════════════════════════════════
+
+  → នេះ ជា simplest version!
+  → QUBO ធ្វើដូចគ្នា ប៉ុន្ដែ more mathematically
+  → ខ្ញុំ guide code ពេញ ជំហានមួយបន្ទាប់ wedk!
+
+  ──────────────────────────────────────────────
+  Week 5-6: Run Experiments
+  ──────────────────────────────────────────────
+
+  Run simulation 4 times (4 methods):
+    Run 1 — Fixed Cycle → record results
+    Run 2 — Webster     → record results
+    Run 3 — SA (QUBO)   → record results
+    Run 4 — QA (D-Wave) → record results
+
+  ──────────────────────────────────────────────
+  Week 7-8: Analyze Results
+  ──────────────────────────────────────────────
+
+  Python auto-calculate → make table + graphs!
+  Output: "SA (QUBO) reduces wait time by X%"
+
+  ──────────────────────────────────────────────
+  Week 9-12: Write Paper (IEEE Format)
+  ──────────────────────────────────────────────
+
+  Write paper section by section:
+  Section 1 → Introduction (why this problem matters)
+  Section 2 → Literature (what others did before)
+  Section 3 → Our method (QUBO formulation)
+  Section 4 → Experiments (SUMO + 4 methods)
+  Section 5 → Results (table + graphs)
+  Section 6 → Conclusion
+
+
+════════════════════════════════════════════════════════════
+  ជំហាន ៨: Summary = Picture ក្នុង ១ Page
+════════════════════════════════════════════════════════════
+
+  PROBLEM:
+    Phnom Penh traffic terrible!
+    70% motorcycle → traffic lights too dumb to handle!
+    Fixed timer = ignores real queue! 😤
+
+  OUR SOLUTION:
+    Smart traffic light using QUBO Math + Quantum Computer
+    Every 30s → check queue → calculate → set optimal green!
+
+  HOW WE TEST IT:
+    SUMO virtual intersection (free simulator)
+    Synthetic traffic: 70% moto / 20% car / 10% tuk-tuk
+    Compare 4 methods → see who wins!
+
+  WHAT WE EXPECT:
+    QUBO method reduces waiting time ~40-45%
+    vs. old Fixed Cycle method!
+
+  WHY IT MATTERS:
+    ✅ First paper to apply Quantum to Phnom Penh traffic
+    ✅ First QUBO designed for motorcycle-dominant city
+    ✅ If scaled up → could help 2 million motorcycles daily!
+
+  WHAT YOU NEED TO KNOW:
+    ✅ No advanced math needed to START
+    ✅ No prior Quantum knowledge needed
+    ✅ Code will be guided step by step
+    ✅ SUMO is visual (like a game) — easy to learn
+
+
+════════════════════════════════════════════════════════════
+  ជំហាន ៩: Q&A — សំណួរដែលជាប់ច្រើន
+════════════════════════════════════════════════════════════
+
+  ❓ "Quantum Computing ពិបាក ណាស់ — ខ្ញុំ RL ?"
+  ✅  យើងប្រើ D-Wave Tool (black box) — គ្មានត្រូវវ
+      ដឹង quantum physics!
+      ប្រើ Python → call function → D-Wave solve it!
+      exactly like: "use Calculator without knowing math circuit"
+
+  ❓ "SUMO ខ្ញុំ RL first time — ok ?"
+  ✅  SUMO has GUI (visual drag & drop)
+      Week 2 ខ្ញុំ guide step by step!
+      មាន tutorial video YouTube ជាច្រើន!
+
+  ❓ "Python beginner — code ដ្ចូចម្ដេចជា?"
+  ✅  Code ខ្ញុំ write for you → you just understand + run!
+      Start simple → add complexity each week
+      ខ្ញុំ explain EVERY line of code!
+
+  ❓ "ខ្ញុំ contribute អ្វី ក្នុង project?"
+  ✅  You contribute:
+      - Phnom Penh knowledge (context expert!)
+      - Vehicle class decision (moto/car/tuk)
+      - Weight design (0.60/0.30/0.10)
+      - Scenario design (what traffic to test)
+      - Paper writing (methodology, results, conclusion)
+
+  ❓ "ជោគជ័យ ដ្ចូចម្ដេចដឹង?"
+  ✅  Success = your QUBO method shows improvement
+      vs Fixed Cycle in SUMO simulation!
+      Even 20% improvement = publishable result!
+      Singh (2022) got IEEE paper with similar approach!
+
+════════════════════════════════════════════════════════════
+  ជំហាន ១០: បន្ទាប់ — ចំណាត់ការ NEXT STEP
+════════════════════════════════════════════════════════════
+
+  RIGHT NOW (Week 1 — Today):
+  ────────────────────────────
+
+  ACTION 1: Install Python
+    → Go to: https://www.python.org/downloads/
+    → Download Python 3.11 (Windows)
+    → Install with checkmark: "Add to PATH" ✅
+
+  ACTION 2: Install SUMO
+    → Go to: https://sumo.dlr.de/docs/Downloads.php
+    → Download: SUMO for Windows (latest)
+    → Install normally
+
+  ACTION 3: Install Python packages
+    Open Command Prompt (CMD) → type:
+    pip install dwave-ocean-sdk dimod neal matplotlib pandas
+
+  ACTION 4: Test
+    Open CMD → type:
+    python -c "import dimod; print('Project Ready!')"
+    → ប្រសិនបើ print "Project Ready!" → ✅
+
+  ──────────────────────────────────────────────────────
+  TELL ME WHEN DONE → ខ្ញុំ guide Week 2 (SUMO) ភ្លាម!
+  ──────────────────────────────────────────────────────
+
+================================================================================
+  END OF BEGINNER GUIDE
+  "You don't need to know everything at the start.
+   You just need to start."
+================================================================================

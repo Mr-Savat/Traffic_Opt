@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <input>
+        <net-file value="phnom_penh.net.xml"/>
+        <route-files value="vehicles.rou.xml,flows.rou.xml"/>
+    </input>
+    <time>
+        <begin value="0"/>
+        <end value="3600"/>
+    </time>
+    <processing>
+        <!-- Enabling 0.8 meter lateral resolution allows motorcycles to share lanes -->
+        <lateral-resolution value="0.8"/>
+    </processing>
+    <gui_only>
+        <gui-settings-file value="gui-settings.xml"/>
+    </gui_only>
+</configuration>

@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+venv/
+.venv/
+env/
+.env
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# SUMO specifics
+*.bak
+*.xml.bak
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# (Optional Data Ignore)
+# ខាងក្រោមនេះបើអ្នកមិនចង់រុញឯកសារ CSV ឬរូបភាពឡើងទៅ GitHub ទេ អ្នកអាចលុបសញ្ញា # ចេញបាន៖
+# *.csv
+# *.png

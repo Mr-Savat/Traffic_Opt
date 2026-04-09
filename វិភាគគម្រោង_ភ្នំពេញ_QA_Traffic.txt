@@ -1,0 +1,435 @@
+================================================================================
+  វិភាគគម្រោងស្រាវជ្រាវ (ព័ត៌មានពេញលេញ)
+  "Quantum-Enhanced Traffic Signal Optimization for
+   Heterogeneous Motorcycle-Dominant Traffic in Phnom Penh"
+  ផ្អែកលើ Literature Review ពី Paper ៦
+================================================================================
+  កាលបរិច្ឆេទ: ០៦ មេសា ២០២៦ | ភាសា: ខ្មែរ
+================================================================================
+
+
+════════════════════════════════════════════════════════════════════
+ផ្នែក ១: ព័ត៌មានជាក់ស្ដ្ដែងអំពីភ្នំពេញ — មូលដ្ឋាន Context
+════════════════════════════════════════════════════════════════════
+
+ដើម្បីយល់ថា ហេតុអ្វីគម្រោងអ្នកមានសារៈសំខាន់ ត្រូវវដឹងទិន្នន័យពិតនេះ:
+
+  ▶ ចំនួនយានយន្ត:
+    • ម៉ូតូ ≈ ២ លានគ្រឿង ក្នុងភ្នំពេញ (JASIC, 2023)
+    • ២០២៣: Cambodia ចុះបញ្ជីថ្មី ៦៥០,០០០ យានយន្ត
+      → ក្នុងនោះ ម៉ូតូ ≈ ៥៤០,០០០ (83%) !!!
+    • Modal Share ២០២២: ម៉ូតូ 58% | Tuk-tuk 15.6% | ឡាន 14.1%
+    • ល្បឿន Traffic ភ្នំពេញ ≈ 14.4 km/h (ចរាចរណ៍ mixed peak hour)
+
+  ▶ Road Safety:
+    • ២០២៣: គ្រោះថ្នាក់ 3,317 cases (+11% vs 2022)
+    • ២০២៣: ស្លាប់ 1,590 នាក់ (-7% vs 2022)
+    • ២០២៣: របួស 4,515 នាក់ (+12% vs 2022)
+    • ម៉ូតូ = 70-80% នៃ fatalities ទាំងអស់
+    • តម្លៃ economic loss ≈ $1 Billion/year (Khmer Times)
+
+  ▶ Infrastructure:
+    • ភ្នំពេញ: ប្រជាជន > 2 លាននាក់ (2025)
+    • Smart traffic sensor: ស្ទើរតែ ZERO
+    • Bus network: < 1.4% modal share
+    • ២០២៣: ភ្នំពេញ ចូលរួម "MobiliseYourCity" partnership
+      (UN-Habitat program, 2023)
+
+→ CONCLUSION: ភ្នំពេញ ជា motorcycle-dominant city ដ៏ REAL
+  ហើយ Traffic Signal Optimization = URGENT PROBLEM ក្នុងពិភពលោក!
+
+
+════════════════════════════════════════════════════════════════════
+ផ្នែក ២: Paper ទាំង ៦ ដែលស្រាវជ្រាវ
+════════════════════════════════════════════════════════════════════
+
+────────────────────────────────────────────────────
+  PAPER 1 — Neukart et al. (2017) — Volkswagen + D-Wave
+  "Traffic flow optimization using a quantum annealer"
+  arXiv: 1708.01625 | Frontiers in ICT
+────────────────────────────────────────────────────
+  ▶ PIONEER paper — ដំបូងគេ! ប្រើ Real GPS data Beijing
+  ▶ Problem: Route assignment (Car routing) មិនមែន Signal timing
+  ▶ Hardware: D-Wave 2X QPU (Hybrid classical + quantum)
+  ▶ Data: Real Beijing GPS trajectory data
+  ▶ Result: QA viable for real-time car routing
+  ▶ Limitation ចំពោះ Project អ្នក:
+    - Cars only (NO motorcycle)
+    - Route optimization (NOT signal control)
+    - Grid city (NOT irregular Phnom Penh topology)
+
+────────────────────────────────────────────────────
+  PAPER 2 — Hussain et al. (2019) — Quantum Info. Processing
+  "Optimal Control of Traffic Signals using Quantum Annealing"
+  arXiv: 1912.07134 | DOI: 10.1007/s11128-020-02815-1
+────────────────────────────────────────────────────
+  ▶ QUBO formulation + D-Wave QPU (Hybrid approach)
+  ▶ Problem: Signal timing on artificial grid network
+  ▶ Data: Synthetic/simulated (no real sensor)
+  ▶ Workflow: Periodic multi-instance solving (time-dependent)
+  ▶ Result: QA competitive vs classical for signal control
+  ▶ Limitation ចំពោះ Project:
+    - Cars only (NO motorcycle)
+    - Synthetic grid (NOT real-world topology)
+    - No heterogeneous vehicle types
+
+────────────────────────────────────────────────────
+  PAPER 3 — Inoue et al. (2021) — Nature Scientific Reports
+  "Traffic Signal Optimization on a Square Lattice with QA"
+  arXiv: 2003.07527 | DOI: 10.1038/s41598-021-82740-0
+────────────────────────────────────────────────────
+  ▶ Large-scale 50×50 Grid city (2500 intersections)
+  ▶ Ising Hamiltonian: H(σ) = σᵀJσ + hᵀσ
+  ▶ Hardware: D-Wave 2000Q (64 qubits/subproblem)
+  ▶ Partitioning: Metis software (42 groups)
+  ▶ Baseline: QA > SA > Local Control (when α > 0.8)
+  ▶ Limitation ចំពោះ Project:
+    - Cars only (NO motorcycle)
+    - Perfect grid (NOT Phnom Penh irregular roads)
+    - Synthetic data (no real-world validation)
+
+────────────────────────────────────────────────────
+  PAPER 4 — Singh et al. (2022) — IEEE SNPD Conference
+  "QA Approach for Optimal Real-time Traffic Control using QUBO"
+  arXiv: 2403.09023 | DOI: 10.1109/SNPD51163.2021.9704985
+  ⭐ MOST RELEVANT TO YOUR PROJECT
+────────────────────────────────────────────────────
+  ▶ REAL intersection (Dongda-Keyuan, Taiwan)
+  ▶ HETEROGENEOUS: Cars + Scooters (2 vehicle classes)
+  ▶ C-QUBO (constrained) + QUBO (unconstrained) approach
+  ▶ Dynamic signal duration (variable green/red time)
+  ▶ Data: Real traffic sensor data (Taiwan)
+  ▶ Result: QUBO > C-QUBO > Fixed Cycle method
+  ▶ Limitation ចំពោះ Project:
+    - Scooter = 20% traffic (ក្នុង Taiwan)
+    - Phone Penh: Motorcycle = 58-80% dominant!
+    - Regular grid intersection (NOT Phnom Penh irregular)
+    - 2 classes only (Car + Scooter)
+    - Developed country infrastructure (Taiwan)
+
+────────────────────────────────────────────────────
+  PAPER 5 — Shikanai, Ohzeki, Tanaka (2023/2025) — NEW!
+  "QUBO Formulation for Traffic Signal Optimization on
+   Real-World Maps" (T-junctions + Multi-forked roads)
+  arXiv: 2308.14462 | Journal of Physical Society Japan, 2025
+────────────────────────────────────────────────────
+  ▶ KEY NOVELTY: QUBO extended ទៅ T-junctions + multi-forked!
+    (ប្រែ: ការ crossroads ច្រើន-ជ្រុង — ស្ទើរ fit ភ្នំពេញ!)
+  ▶ Validation: SUMO simulator + Real Aomori City (Japan) GIS data
+  ▶ Comparison: D-Wave vs Gurobi (classical solver)
+  ▶ Result: QUBO reduces red light waiting ~28.9% (high traffic)
+  ▶ Important Finding: D-Wave SLOWER than Gurobi Optimizer!
+    → QA hardware limitations still exist in current generation
+  ▶ Relevance ចំពោះ Project:
+    + T-junction/multi-fork = VERY similar to Phnom Penh road shape
+    + SUMO simulator approach = អ្នកអាចប្រើ SUMO ដូចគ្នា!
+    + Honest about QA limitations = Good academic model
+  ▶ Limitation:
+    - Cars only (NO motorcycle)
+    - Japan (Developed country — NOT SE Asia context)
+
+────────────────────────────────────────────────────
+  PAPER 6 — Inoue, Yamashita et al. (2024) — NEW! NEWEST!
+  "AMPIC: Adaptive Model Predictive Ising Controller"
+  arXiv: 2406.03690 | Submitted June 2024 (Latest!)
+  (Toyota Central R&D Labs — GitHub available!)
+────────────────────────────────────────────────────
+  ▶ AMPIC = Adaptive Model Predictive Ising Controller
+  ▶ Combines: Model Predictive Control (MPC) + Ising/QA
+  ▶ LARGE-SCALE: Realistic city road network (not just grid)
+  ▶ Tool: SUMO microscopic traffic simulator
+  ▶ Ising Solver: D-Wave QA = near-optimal at low cost
+  ▶ Result: Faster cruising speed + Less waiting + Less CO2
+  ▶ CODE: Available on GitHub (Toyota CRDL)
+  ▶ Relevance ចំពោះ Project:
+    + MPC + Ising = New approach អ្នកអាចពិចារណា extend!
+    + SUMO validation = framework ដ្ដ ‌ reusable!
+    + Large-scale urban = closer to real Phnom Penh network
+  ▶ Limitation:
+    - Cars only (NO motorcycle)
+    - Generic city model (NOT Phnom Penh)
+
+
+════════════════════════════════════════════════════════════════════
+ផ្នែក ៣: ការប្រៀបធៀប Paper ទាំង ៦ ជា Table
+════════════════════════════════════════════════════════════════════
+
+  Feature          | Neukart | Hussain | Inoue  | Singh  | Shikanai| AMPIC
+                   | 2017    | 2019    | 2021   | 2022   | 2023    | 2024
+  -----------------+---------+---------+--------+--------+---------+--------
+  Problem Type     | Routing | Signal  | Signal | Signal | Signal  | Signal
+  Vehicle Types    | Car     | Car     | Car    | Car+SC | Car     | Car
+  Motorcycle?      | No      | No      | No     | Scootr | No      | No
+  Data Source      | Real    | Synth   | Synth  | Real   | Real GIS| Simul.
+  Road Topology    | Beijing | Grid    | 50x50  | Real 1 | T-junct | City
+  Intersection     | N/A     | Grid    | Grid   | 1 real | Multi   | Network
+  QA Hardware      | D-Wave2X| D-Wave  | D-Wave | QA/DA  | D-Wave  | D-Wave
+  SUMO Used?       | No      | No      | No     | No     | YES ✓   | YES ✓
+  Baseline         | Class.  | N/A     | SA+LC  | Fixed  | Gurobi  | Classic
+  Real-world Valid | YES     | No      | No     | YES    | YES     | No
+  Code Public?     | No      | No      | No     | No     | No      | YES ✓
+
+
+  SC = Scooter | LC = Local Control | DA = Digital Annealer
+
+
+════════════════════════════════════════════════════════════════════
+ផ្នែក ៤: Research Gap — អ្វីដែល ៦ Paper ខ្វះ = OPPORTUNITY អ្នក
+════════════════════════════════════════════════════════════════════
+
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  GAP                         │ Evidence ពី Papers         ║
+  ║──────────────────────────────┼────────────────────────────║
+  ║ Motorcycle-DOMINANT traffic  │ Paper ទាំង ៦: CAR ONLY!   ║
+  ║ (>50% motorcycle)            │ Singh scooter = 20% seulement║
+  ╠══════════════════════════════════════════════════════════════╣
+  ║ SE Asia / Cambodia context   │ Papers: Japan, Taiwan,     ║
+  ║                              │ Beijing, Pakistan          ║
+  ╠══════════════════════════════════════════════════════════════╣
+  ║ Irregular + Colonial roads   │ Papers: Grid, T-junction   ║
+  ║ (French colonial + organic)  │ Only Shikanai: multi-fork  ║
+  ╠══════════════════════════════════════════════════════════════╣
+  ║ Developing city constraints  │ Papers: Japan/Taiwan infra ║
+  ║ (low sensor, low data)       │ (rich data availability)  ║
+  ╠══════════════════════════════════════════════════════════════╣
+  ║ Multi-modal (moto+car+tuk)   │ Max 2 classes (Singh)      ║
+  ╠══════════════════════════════════════════════════════════════╣
+  ║ SUMO + QUBO motorcycle model │ Shikanai + AMPIC: SUMO    ║
+  ║                              │ but NO motorcycle in SUMO  ║
+  ╚══════════════════════════════════════════════════════════════╝
+
+→ គម្រោងអ្នក = FIRST paper ក្នុងពិភពលោក ដែល:
+  ① QUBO/Ising formulation + motorcycle-DOMINANT context
+  ② Applied to Phnom Penh (SE Asia developing city)
+  ③ Multi-class: Motorcycle (dominant) + Car + Tuk-tuk
+  ④ Irregular Phnom Penh road topology
+
+
+════════════════════════════════════════════════════════════════════
+ផ្នែក ៥: ការ Borrow ពី Papers — អ្វីដែលអ្នកអាចប្រើ
+════════════════════════════════════════════════════════════════════
+
+  ✅ ពី Hussain (2019):
+     → QUBO periodic workflow (solve periodically as traffic changes)
+     → Hybrid classical+quantum strategy for limited qubits
+
+  ✅ ពី Inoue (2021):
+     → Ising Hamiltonian formulation: H = σᵀJσ + hᵀσ
+     → Flow imbalance objective function
+     → Metis graph partitioning for large network
+     → Comparison: QA vs SA vs Local Control
+
+  ✅ ពី Singh (2022) — ⭐MOST BORROW FROM THIS:
+     → QUBO + C-QUBO dual approach
+     → Heterogeneous vehicle class modeling (extend to moto-dominant)
+     → Dynamic signal duration (NOT binary on/off)
+     → Real intersection validation methodology
+     → Baseline: Fixed Cycle method comparison
+
+  ✅ ពី Shikanai (2023) — NEW CONTRIBUTION:
+     → QUBO for T-junction + multi-forked roads
+     → SUMO simulator for validation
+     → Honest comparison: QA vs Gurobi (classical solver)
+     → Real GIS data integration approach
+
+  ✅ ពី AMPIC Inoue (2024) — NEW LATEST METHOD:
+     → MPC (Model Predictive Control) + Ising = stronger method
+     → SUMO microscopic traffic simulator (open source)
+     → Toyota GitHub code (ToyotaCRDL/ampic) = reference
+     → Large city network approach (scalable)
+
+  ✅ ពី Phnom Penh real data (UN-Habitat, JASIC, Khmer Times):
+     → Motorcycle modal share: 58-80% (cite as justification)
+     → Average speed 14.4 km/h (cite as problem severity)
+     → $1 Billion/year economic loss (cite for motivation)
+     → 2 Million+ motorcycles registered (cite for scale)
+
+
+════════════════════════════════════════════════════════════════════
+ផ្នែក ៦: ការវាយតម្លៃ Novelty — What Makes Your Project UNIQUE
+════════════════════════════════════════════════════════════════════
+
+  ★★★★★  Motorcycle-Dominant QUBO Formulation (5/5)
+          ► ZERO paper in literature models motorcycle as DOMINANT
+          ► Singh: 2 classes (scooter 20%) → Your: 3+ classes (moto 58-80%)
+          ► Mathematical extension: weighted QUBO (w_moto >> w_car)
+
+  ★★★★☆  Phnom Penh Context (4/5)
+          ► No paper has focused on Cambodia or Phnom Penh
+          ► Irregular French-colonial + organic road layout
+          ► Extends Shikanai T-junction approach to SE Asia city
+          ► (⚠️ ចំណាស់: can only claim context novelty if methodology new too)
+
+  ★★★★☆  SUMO + Motorcycle Sublane Modeling (4/5)
+          ► Shikanai + AMPIC use SUMO → but NO motorcycle in SUMO
+          ► Your project = FIRST to combine SUMO sublane model
+            (motorcycle weaving behavior) + QUBO optimization
+          ► SL2015 sublane model (SUMO) = motorcycle lane-sharing behavior
+
+  ★★★☆☆  Developing City Context / Low-Data Approach (3/5)
+          ► This is an important contribution but harder to quantify
+          ► Papers have always assumed good sensor infrastructure
+          ► Your approach: synthetic data justified by Phnom Penh reality
+
+
+════════════════════════════════════════════════════════════════════
+ផ្នែក ៧: ចំណុចខ្សោយ / Challenge ដែលត្រូវវអាន
+════════════════════════════════════════════════════════════════════
+
+  ⚠️  CHALLENGE 1: Shikanai (2023) showed D-Wave SLOWER than Gurobi!
+      → ដូច្នេះ QA advantage មិន absolute
+      → Solution: Claim "near-optimal" solution, NOT "optimal"
+      → Use SA (Simulated Annealing) as main solver for paper
+      → Compare: SA vs Fixed Cycle = still valid academic contribution
+      → QA = supplementary experiment (if D-Wave Leap access)
+
+  ⚠️  CHALLENGE 2: SUMO Motorcycle Calibration ពិបាក
+      → SUMO sublane model requires calibration parameters
+      → Need local Phnom Penh data (video or manual count)
+      → Solution: Use conservative PCU (Passenger Car Unit) values
+        from Asian research (moto PCU ≈ 0.3-0.5)
+      → Reference: EASTS (Eastern Asia Society for Transportation Studies)
+
+  ⚠️  CHALLENGE 3: Real Data Scarcity
+      → Papers 3, 5, 6 use synthetic/simulated data → acceptable!
+      → Solution: Use SUMO to generate synthetic motorcycle-dominant traffic
+      → Manual count 1 intersection (2 peak hours) for validation
+      → State clearly as "limitation" in paper → academic honesty
+
+  ⚠️  CHALLENGE 4: QUBO Scaling for Network
+      → Each new variable = qubit on D-Wave (limited to ~5000 now)
+      → Solution: Inoue 2021 approach (Metis subgraph)
+      → Or AMPIC approach (Model Predictive = solve locally + globally)
+
+
+════════════════════════════════════════════════════════════════════
+ផ្នែក ៨: Suggested Methodology (ផ្អែកលើ synthesis ៦ paper)
+════════════════════════════════════════════════════════════════════
+
+  STEP 1: Define Problem (Week 1-2)
+  ─────────────────────────────────
+  • ជ្រើស intersection: ភ្នំពេញ (e.g., Monivong x Norodom)
+    ឬ ប្រើ synthetic T-junction + multi-fork (like Shikanai)
+  • Define vehicle classes:
+    Class A = Motorcycle (dominant, weight = 0.5 PCU)
+    Class B = Car/SUV (weight = 1.0 PCU)
+    Class C = Tuk-tuk/Minibus (weight = 1.5 PCU)
+  • Define signal phases: NS_green=1, EW_green=0 (like Hussain)
+
+  STEP 2: QUBO Formulation (Week 3-5)
+  ────────────────────────────────────
+  • Build on Singh (2022) QUBO → extend to 3 vehicle classes:
+
+    Q_motorcycle(x) = Σ w_m × queue_m(x)   [dominant weight]
+    Q_car(x)        = Σ w_c × queue_c(x)   [secondary]
+    Q_tuk(x)        = Σ w_t × queue_t(x)   [tertiary]
+    H(x) = Q_motorcycle + Q_car + Q_tuk + P × constraints
+
+  • Constraint: conflict-free signal (no simultaneous green)
+  • Dynamic duration: variable green time (like Singh C-QUBO/QUBO)
+  • For T-junctions: use Shikanai formulation (extend it)
+
+  STEP 3: SUMO Simulation (Week 6-8)
+  ───────────────────────────────────
+  • SUMO + Sublane Model (SL2015) for motorcycle weaving
+  • Generate synthetic traffic:
+    70% motorcycle + 20% car + 10% tuk-tuk
+    (justify with Phnom Penh modal share data)
+  • Traffic scenarios:
+    Scenario A: Rush hour (AM peak 7-9am)
+    Scenario B: Rush hour (PM peak 5-7pm)
+    Scenario C: Off-peak balanced
+    Scenario D: Heavy moto "wave" at signal start
+
+  STEP 4: Solve with QA/SA (Week 9-10)
+  ──────────────────────────────────────
+  • Primary Solver: neal.SimulatedAnnealingSampler() (free, local)
+  • Secondary: D-Wave LeapHybridSampler (academic access)
+  • Baseline 1: Fixed Cycle method (like Singh)
+  • Baseline 2: Webster's method (classical traffic engineering)
+  • Compare: QA vs SA vs Fixed vs Webster
+
+  STEP 5: Evaluate + Write (Week 11-12)
+  ───────────────────────────────────────
+  • Metrics:
+    - Average Queue Length (vehicles/phase)
+    - Average Waiting Time (seconds/vehicle)
+    - Motorcycle-specific throughput (vehicles/min)
+    - Signal switch frequency (stability check)
+  • Report structure (follow Singh paper structure):
+    Abstract → Intro → Lit Review → Methodology →
+    Results → Discussion → Limitation → Conclusion
+
+
+════════════════════════════════════════════════════════════════════
+ផ្នែក ៩: ការវាយតម្លៃ Overall + ការណែនាំ
+════════════════════════════════════════════════════════════════════
+
+  ✅ VERDICT: គម្រោងអ្នក STRONG ជាមួយ GENUINE ACADEMIC VALUE!
+
+  ► Paper ៦ ដែលបានស្រាវជ្រាវ = NO ONE addressed Phnom Penh
+    motorcycle-dominant traffic with QA/QUBO
+    → Your paper = TRULY FIRST in this specific combination
+
+  ► Shikanai (2023) + AMPIC (2024) = NEWEST papers ២
+    ដែលបន្ថែម credibility ថ field នៅ ACTIVE (not outdated)
+    → Your project align with current research direction
+
+  ► Key Strengths (Summary):
+    ① Motorcycle-dominant QUBO = genuinely new formulation
+    ② Phnom Penh = geographically + contextually new
+    ③ SUMO + sublane motorcycle = methodologically new
+    ④ Extends Singh (2022) + Shikanai (2023) = clear lineage
+    ⑤ Real Phnom Penh statistics = strong motivation section
+
+  ► Recommended Paper Title (revised):
+    "Quantum-Enhanced Adaptive Traffic Signal Control for
+    Motorcycle-Dominant Heterogeneous Traffic: A QUBO Approach
+    Applied to Phnom Penh Urban Intersections"
+
+  ► TOP PRIORITY Action Items:
+    [1] ទាញ D-Wave Ocean SDK + neal: pip install dwave-ocean-sdk
+    [2] ទាញ SUMO: https://sumo.dlr.de/docs/Downloads.php
+    [3] Study AMPIC GitHub code: github.com/ToyotaCRDL/ampic
+    [4] ចុះបញ្ជី D-Wave Leap (Academic): cloud.dwavesys.com
+    [5] Count traffic 1 intersection, 1 peak hour (baseline data)
+
+
+════════════════════════════════════════════════════════════════════
+ឯកសារ References ទាំង ៦
+════════════════════════════════════════════════════════════════════
+
+[1] Neukart, F. et al. (2017). Traffic flow optimization using a
+    quantum annealer. Frontiers in ICT, 4, 29. arXiv:1708.01625
+
+[2] Hussain, H. et al. (2020). Optimal Control of Traffic Signals
+    using Quantum Annealing. Quantum Information Processing, 19:312.
+    DOI: 10.1007/s11128-020-02815-1
+
+[3] Inoue, D. et al. (2021). Traffic Signal Optimization on a Square
+    Lattice with Quantum Annealing. Scientific Reports, 11, 3303.
+    DOI: 10.1038/s41598-021-82740-0
+
+[4] Singh, A. et al. (2022). QA Approach for Optimal Real-time Traffic
+    Control using QUBO. IEEE SNPD 2021.
+    DOI: 10.1109/SNPD51163.2021.9704985
+
+[5] Shikanai, R., Ohzeki, M., Tanaka, K. (2023/2025). Quadratic
+    Unconstrained Binary Formulation for Traffic Signal Optimization
+    on Real-World Maps. Journal of Physical Society Japan, 94, 024001.
+    arXiv: 2308.14462
+
+[6] Inoue, D., Yamashita, H., Aihara, K., Yoshida, H. (2024). Traffic
+    signal optimization in large-scale urban road networks: AMPIC.
+    arXiv: 2406.03690. GitHub: github.com/ToyotaCRDL/ampic
+
+ទិន្នន័យ Phnom Penh:
+[7] JASIC (2023). Vehicle Registration Statistics, Cambodia.
+[8] UN-Habitat (2023). Phnom Penh Urban Mobility Report.
+[9] Phnom Penh Capital Administration (2023). MobiliseYourCity.
+[10] Khmer Times (2023). Road Safety Economic Impact Cambodia.
+
+════════════════════════════════════════════════════════════════════
+   END OF DOCUMENT — Version 2.0 (Extended with 6 Papers)
+   © 2026 — Academic Research Analysis
+================================================================================

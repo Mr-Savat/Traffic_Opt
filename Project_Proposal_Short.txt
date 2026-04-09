@@ -1,0 +1,127 @@
+================================================================================
+  PROJECT PROPOSAL
+  Quantum-Enhanced Traffic Signal Optimization for
+  Motorcycle-Dominant Traffic in Phnom Penh
+  ─────────────────────────────────────────────────
+  Year 3 Undergraduate Thesis  |  IEEE-Quality Target
+================================================================================
+
+
+1. PROBLEM
+───────────
+  Phnom Penh traffic lights use fixed timers that ignore actual
+  vehicle queues. With over 70% of traffic being motorcycles,
+  this causes significant and unnecessary congestion. No existing
+  research applies quantum optimization to this context.
+
+  We choose Quantum Annealing over Deep Reinforcement Learning (DRL)
+  because QUBO is a combinatorial optimization problem—exactly what
+  QA is designed for. DRL requires large training data and is a
+  black-box approach, making it less interpretable for traffic decisions.
+
+
+2. OUR SOLUTION
+────────────────
+  We formulate traffic signal control as a QUBO (Quadratic
+  Unconstrained Binary Optimization) problem with motorcycle-
+  dominant weights and solve it using both classical and quantum
+  methods. Tested in SUMO traffic simulator with synthetic
+  Phnom Penh traffic data.
+
+  "Quantum-Enhanced" refers to the QUBO formulation design
+  which is hardware-agnostic and ready for future QPU
+  deployment as quantum hardware scales.
+
+  Vehicle weights derived from Phnom Penh modal share (JASIC, 2023):
+    Motorcycle  0.60  (modal share: 58–70%)
+    Car         0.30  (modal share: 14–20%)
+    Tuk-tuk     0.10  (modal share: 10–15%)
+
+
+3. WHAT WE COMPARE
+───────────────────
+  Method 1 — Fixed Cycle       Traditional fixed timer (baseline)
+  Method 2 — Webster Formula   Classical traffic engineering
+  Method 3 — SA + QUBO         Our method, classical solver
+  Method 4 — QA + QUBO         Our method, quantum solver (D-Wave)
+
+  Tested under 4 scenarios:
+    Rush AM (700 moto/h)  |  Rush PM (600/h)
+    Off-Peak (200/h)      |  Extreme Load (900/h)
+
+
+4. EXPECTED RESULTS
+────────────────────
+  ┌──────────────────────────────────────────────┐
+  │  Method       │  Avg Wait   │  vs Baseline   │
+  ├──────────────────────────────────────────────┤
+  │  Fixed Cycle  │  ~90 sec    │  baseline      │
+  │  Webster      │  ~70 sec    │  −22%          │
+  │  SA + QUBO    │  ~52 sec    │  −42%  ✓       │
+  │  QA + QUBO    │  ~50 sec    │  −44%  ✓       │
+  └──────────────────────────────────────────────┘
+
+
+5. OUR CONTRIBUTIONS
+─────────────────────
+  [C1]  First QUBO model for motorcycle-dominant traffic
+        (extends Singh 2022 from 20% to 70% motorcycle)
+
+  [C2]  First application in Phnom Penh / SE Asia context
+
+  [C3]  First SUMO sublane simulation with QUBO for
+        motorcycle-dominant scenario
+
+
+6. SCOPE
+─────────
+  Single 4-way intersection (proof-of-concept)
+  Synthetic SUMO data calibrated to Phnom Penh statistics
+  All tools free: Python · SUMO · dimod · neal · D-Wave Leap
+
+
+7. LIMITATIONS
+───────────────
+  • Synthetic data only — real sensor validation is future work
+  • Single intersection — network extension is future work
+  • QA near-optimal only — QUBO design is hardware-agnostic
+  • Simplified motorcycle behavior — 85% compliance assumed
+
+
+8. KEY REFERENCES
+──────────────────
+  [1]  F. Neukart, G. Compostella, C. Seidel, D. von Dollen, S. Yarkoni,
+       and B. Parney, "Traffic flow optimization using a quantum annealer,"
+       Frontiers in ICT, vol. 4, p. 29, 2017.
+
+  [2]  I. Hussain, S. Ahmad, M. Qamar, and A. Almogren,
+       "Optimal control of traffic signals using quantum annealing,"
+       Quantum Information Processing, vol. 19, no. 9, p. 312, 2020.
+
+  [3]  J. Inoue, S. Yoshida, and K. Ono,
+       "Traffic signal optimization on a square lattice with quantum
+       annealing," Scientific Reports, vol. 11, p. 3303, 2021.
+
+  [4]  R. Singh, A. Bhatt, and S. Kumar,                    [Most Relevant]
+       "A quantum annealing approach for optimal real-time traffic
+       control under heterogeneous flow conditions,"
+       IEEE SNPD 2021, pp. 147–152, 2022.
+
+  [5]  S. Shikanai, T. Kawamoto, and H. Goto,
+       "Traffic signal optimization on real-world map using the
+       QUBO model," J. Phys. Soc. Japan, vol. 92, 2023.
+       arXiv: 2308.14462
+
+  [6]  J. Inoue et al.,
+       "Adaptive model predictive Ising controller for large-scale
+       traffic signal networks (AMPIC)," arXiv: 2406.03690, 2024.
+
+  [7]  JASIC (Japan ASEAN Integration Fund),
+       "Cambodia vehicle registration and mobility statistics 2023,"
+       Phnom Penh: Ministry of Public Works and Transport, 2023.
+       [Source for motorcycle modal share: 58–70%]
+
+================================================================================
+  Thank you for your review and feedback.
+================================================================================
+

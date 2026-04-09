@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+  <!-- SC-1 Rush Hour AM Traffic Scenario -->
+  <!-- Peak rate: 700 moto/hour | 150 car/hour | 60 tuk-tuk/hour -->
+
+  <!-- Motorcycles -->
+  <flow id="moto_N" type="motorcycle" from="edge_N" to="edge_S_out" begin="0" end="3600" vehsPerHour="700" departLane="random"/>
+  <flow id="moto_S" type="motorcycle" from="edge_S" to="edge_N_out" begin="0" end="3600" vehsPerHour="650" departLane="random"/>
+  <flow id="moto_E" type="motorcycle" from="edge_E" to="edge_W_out" begin="0" end="3600" vehsPerHour="500" departLane="random"/>
+  <flow id="moto_W" type="motorcycle" from="edge_W" to="edge_E_out" begin="0" end="3600" vehsPerHour="480" departLane="random"/>
+
+  <!-- Cars -->
+  <flow id="car_N" type="car" from="edge_N" to="edge_S_out" begin="0" end="3600" vehsPerHour="150" departLane="random"/>
+  <flow id="car_S" type="car" from="edge_S" to="edge_N_out" begin="0" end="3600" vehsPerHour="150" departLane="random"/>
+  <flow id="car_E" type="car" from="edge_E" to="edge_W_out" begin="0" end="3600" vehsPerHour="120" departLane="random"/>
+  <flow id="car_W" type="car" from="edge_W" to="edge_E_out" begin="0" end="3600" vehsPerHour="120" departLane="random"/>
+
+  <!-- Tuk-tuks -->
+  <flow id="tuk_N" type="tuktuk" from="edge_N" to="edge_S_out" begin="0" end="3600" vehsPerHour="60" departLane="random"/>
+  <flow id="tuk_S" type="tuktuk" from="edge_S" to="edge_N_out" begin="0" end="3600" vehsPerHour="60" departLane="random"/>
+  <flow id="tuk_E" type="tuktuk" from="edge_E" to="edge_W_out" begin="0" end="3600" vehsPerHour="50" departLane="random"/>
+  <flow id="tuk_W" type="tuktuk" from="edge_W" to="edge_E_out" begin="0" end="3600" vehsPerHour="50" departLane="random"/>
+</routes>
