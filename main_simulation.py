@@ -46,8 +46,8 @@ def run_simulation(method="SA", scenario="SC1", use_gui=False):
     print(f"-> Simulating {method} on {scenario} (GUI: {use_gui})...", end=" ", flush=True)
     
     # Pass --route-files to dynamically load SC1, SC2, etc.
-    routes = f"vehicles.rou.xml,flows_{scenario}.rou.xml"
-    sumo_cmd = [sumo_bin, "-c", "phnom_penh.sumocfg", "--route-files", routes, "--time-to-teleport", "-1"]
+    routes = f"sumo_data/vehicles.rou.xml,sumo_data/flows_{scenario}.rou.xml"
+    sumo_cmd = [sumo_bin, "-c", "sumo_data/phnom_penh.sumocfg", "--route-files", routes, "--time-to-teleport", "-1"]
     if not use_gui:
         sumo_cmd.extend(["--no-step-log", "true"])
     else:
@@ -90,7 +90,7 @@ def run_simulation(method="SA", scenario="SC1", use_gui=False):
     traci.close()
     
     df = pd.DataFrame(wait_time_records)
-    df.to_csv(f"results_{method}_{scenario}.csv", index=False)
+    df.to_csv(f"results/results_{method}_{scenario}.csv", index=False)
     print(f"DONE. (Avg Queue: {df['halted_vehicles'].mean():.2f})")
 
 if __name__ == "__main__":

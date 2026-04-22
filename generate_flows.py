@@ -20,7 +20,7 @@ for name, data in scenarios.items():
                           **{"from": d_from, "to": d_to, "begin": "0", "end": "3600", 
                              "vehsPerHour": str(rate_var), "departLane": "random"})
     
-    with open(f"flows_{name}.rou.xml", "w") as f:
+    with open(f"sumo_data/flows_{name}.rou.xml", "w") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
         # Format the XML
         import xml.dom.minidom

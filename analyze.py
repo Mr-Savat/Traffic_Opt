@@ -11,7 +11,7 @@ def analyze_full_results():
     for s in scenarios:
         data[s] = {}
         for m in methods:
-            file = f"results_{m}_{s}.csv"
+            file = f"results/results_{m}_{s}.csv"
             if os.path.exists(file):
                 df = pd.read_csv(file)
                 data[s][m] = df
@@ -66,7 +66,8 @@ def analyze_full_results():
     ax.legend(fontsize=12)
     plt.grid(True, linestyle='--', alpha=0.5)
     plt.tight_layout()
-    plt.savefig('fig1_4x4_comparison.png', dpi=300)
+    plt.savefig('results/fig1_4x4_comparison.png', dpi=300)
+    plt.show()
     plt.close()
     
     # --- Figure 2: Line chart for SC-4 specifically ---
@@ -83,7 +84,8 @@ def analyze_full_results():
     plt.legend(fontsize=12)
     plt.grid(True, linestyle='--', alpha=0.5)
     plt.tight_layout()
-    plt.savefig('fig2_SC4_timeline.png', dpi=300)
+    plt.savefig('results/fig2_SC4_timeline.png', dpi=300)
+    plt.show()
     plt.close()
     
     print("\n✅ New IEEE Charts successfully saved (fig1_4x4_comparison.png, fig2_SC4_timeline.png)!")
