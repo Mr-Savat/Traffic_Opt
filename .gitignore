@@ -48,3 +48,6 @@ $RECYCLE.BIN/
 # ខាងក្រោមនេះបើអ្នកមិនចង់រុញឯកសារ CSV ឬរូបភាពឡើងទៅ GitHub ទេ អ្នកអាចលុបសញ្ញា # ចេញបាន៖
 # *.csv
 # *.png
+
+# Ignore docs folder
+docs/

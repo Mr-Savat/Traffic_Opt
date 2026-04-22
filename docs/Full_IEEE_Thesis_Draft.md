@@ -1,7 +1,7 @@
 # Quantum-Enhanced Traffic Signal Optimization for Heterogeneous Motorcycle-Dominant Traffic in Phnom Penh
 
 ## Abstract
-Traffic congestion in developing Southeast Asian cities, notably Phnom Penh, is characterized by a high volume of motorcycles resulting in complex, heterogeneous traffic flows. Traditional fixed-cycle traffic signal controllers fail to dynamically adapt to these rapidly fluctuating conditions, while modern Deep Reinforcement Learning (DRL) methods require excessive training data and lack operational transparency. This thesis proposes a novel approach utilizing a Quadratic Unconstrained Binary Optimization (QUBO) formulation, solved via Simulated Annealing (SA) as a robust proxy for Quantum Annealing (QA), to optimize traffic signal timings in real-time. By implementing a motorcycle-weighted objective function reflecting real-world modal shares (60% motorcycles), the model was evaluated using the microscopic simulator SUMO with sublane modeling interactions. Across four distinct traffic scenarios, the QUBO-based method consistently outperformed static baselines. Most notably, under extreme motorcycle wave conditions, the quantum-inspired optimization reduced the average network-wide halted vehicle queue by 38.50% compared to traditional fixed-cycle systems. This demonstrates the viability of QUBO formulations for developing-city traffic management.
+Traffic congestion in developing Southeast Asian cities, notably Phnom Penh, is characterized by a high volume of motorcycles resulting in complex, heterogeneous traffic flows. Traditional fixed-cycle traffic signal controllers fail to dynamically adapt to these rapidly fluctuating conditions, while modern Deep Reinforcement Learning (DRL) methods require excessive training data and lack operational transparency. This thesis proposes a novel approach utilizing a Quadratic Unconstrained Binary Optimization (QUBO) formulation, solved via Simulated Annealing (SA) as a robust proxy for Quantum Annealing (QA), to optimize traffic signal timings in real-time. By implementing a motorcycle-weighted objective function reflecting real-world modal shares (60% motorcycles), the model was evaluated using the microscopic simulator SUMO with sublane modeling interactions. Across four distinct traffic scenarios, the QUBO-based method consistently outperformed static baselines. Most notably, under extreme motorcycle wave conditions, the quantum-inspired optimization reduced the average network-wide halted vehicle queue by 40.03% compared to traditional fixed-cycle systems. This demonstrates the viability of QUBO formulations for developing-city traffic management.
 
 ---
 
@@ -187,8 +187,8 @@ The QUBO-driven SA algorithm vastly outperformed the static Fixed Cycle baseline
 |---|---|---|---|---|
 | Fixed Cycle | 12.98 | 12.64 | 3.19 | 14.76 |
 | Webster | 7.93 | 8.25 | 2.12 | 8.85 |
-| **SA / QUBO (Proposed)** | **7.93** | **8.06** | **2.09** | **9.08** |
-| QA (Proxy) | 7.93 | 8.06 | 2.11 | 8.85 |
+| **SA / QUBO (Proposed)** | **7.93** | **8.06** | **2.09** | **8.85** |
+| QA (Proxy) | 7.93 | 8.06 | 2.14 | 8.85 |
 
 > *All values represent mean halted vehicles per second across the full 3600-step simulation. Bold denotes the proposed method.*
 
@@ -199,18 +199,18 @@ The QUBO-driven SA algorithm vastly outperformed the static Fixed Cycle baseline
 | SC-1 (Rush AM) | 12.98 | 7.93 | **38.90%** |
 | SC-2 (Rush PM) | 12.64 | 8.06 | **36.25%** |
 | SC-3 (Off-Peak) | 3.19 | 2.09 | **34.48%** |
-| SC-4 (Extreme Moto) | 14.76 | 9.08 | **38.50%** |
-| **Overall Average** | **10.89** | **6.79** | **~37.03%** |
+| SC-4 (Extreme Moto) | 14.76 | 8.85 | **40.03%** |
+| **Overall Average** | **10.89** | **6.73** | **~38.20%** |
 
-*(Insert Figure 1: `fig1_4x4_comparison.png` here)*
+![Figure 1: Performance Comparison Across Scenarios](../results/fig1_4x4_comparison.png)
 > **Figure 1**: Grouped bar chart comparing the average halted vehicle queue depth across four scenarios (Table I). The proposed QUBO/SA method (green) maintains the lowest overall network queue in all peak-traffic conditions.
 
 ### B. Resilience in Extreme Conditions
 The most striking result occurs in Scenario 4 (Extreme Moto Wave). Fixed-cycle timers are fundamentally "blind" to sudden surges, resulting in a snowballing gridlock effect where the queue strictly increases. By continually evaluating the QUBO matrix every 30 seconds, the SA algorithm disrupted the static cycle to repeatedly clear the most congested lanes. 
 
-**Resulting Metric:** The QUBO method achieved an average queue depth mathematically 38.50% lower than the Fixed Cycle implementation during SC-4.
+**Resulting Metric:** The QUBO method achieved an average queue depth mathematically 40.03% lower than the Fixed Cycle implementation during SC-4.
 
-*(Insert Figure 2: `fig2_SC4_timeline.png` here)*
+![Figure 2: Traffic Queue Evolution in SC-4](../results/fig2_SC4_timeline.png)
 > **Figure 2**: Time-series progression of halted vehicles during SC-4. Notice the sharp, uncontrolled spikes in the red (Fixed) line compared to the smoothed, adaptive clearance of the green (SA) line.
 
 ---
@@ -228,7 +228,7 @@ The integration of a $W_M = 0.60$ multiplier ensures that the QUBO solver percei
 ---
 
 ## VII. Conclusion
-This thesis successfully introduced and validated a Quantum-inspired QUBO algorithm for traffic signal optimization tailored specifically to motorcycle-dominant cities like Phnom Penh. By leveraging sublane simulations and weighted combinatorial logic, the system registered a definitive 38.50% reduction in traffic delays during extreme rush-hour simulations compared to traditional baselines. This establishes a robust framework for developing-city traffic engineering, entirely bypassing the high data requirements of conventional AI, and laying a hardware-agnostic foundation fully prepared for the upcoming quantum computing era.
+This thesis successfully introduced and validated a Quantum-inspired QUBO algorithm for traffic signal optimization tailored specifically to motorcycle-dominant cities like Phnom Penh. By leveraging sublane simulations and weighted combinatorial logic, the system registered a definitive 40.03% reduction in traffic delays during extreme rush-hour simulations compared to traditional baselines. This establishes a robust framework for developing-city traffic engineering, entirely bypassing the high data requirements of conventional AI, and laying a hardware-agnostic foundation fully prepared for the upcoming quantum computing era.
 
 ---
 
